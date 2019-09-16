@@ -1,0 +1,27 @@
+body {
+   margin: 0;
+}
+
+#topo {
+    height: 100px;
+    background-color: #EEE;
+}
+
+#menu {
+    height: 50px;
+    background-color: #DDD;
+}
+
+main {
+    min-height: 300px;
+}
+#rodape {
+    height: 80px;
+    background-color: #ddd;
+}
+.container {
+    width: 100%;
+    max-width: 1200px;
+    background-color: #ddd;
+    margin: auto;
+}
