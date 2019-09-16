@@ -5,8 +5,10 @@ body {
 }
 
 #topo {
-    height: 100px;
-    background-color: #EEE;
+    height: 130px;
+    background-color: #FFF;
+    text-align: center;
+    padding: 10px;
 }
 
 #menu {
