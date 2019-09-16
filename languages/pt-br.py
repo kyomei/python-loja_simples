@@ -102,6 +102,7 @@
 'export as csv file': 'exportar como um arquivo csv',
 'FAQ': 'Perguntas frequentes',
 'file': 'file',
+'file ## download': 'file ',
 'First name': 'Nome',
 'Forms and Validators': 'Formulários e Validadores',
 'Free Applications': 'Aplicações gratuitas',
