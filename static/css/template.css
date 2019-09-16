@@ -1,5 +1,6 @@
 body {
    margin: 0;
+   font-family: arial;
 }
 
 #topo {
@@ -11,7 +12,25 @@ body {
     height: 50px;
     background-color: #DDD;
 }
-
+#menu a {
+    color: #000;
+}
+#menu ul {
+    margin: 0;
+    padding: 0;
+}
+#menu ul li {
+    list-style: none;
+    float: left;
+    height: 50px;
+    padding: 0 10px;
+    line-height: 50px;
+    text-transform: uppercase;
+}
+#menu ul li:hover {
+    cursor: pointer;
+    background-color: #CCC;
+}
 main {
     min-height: 300px;
 }
