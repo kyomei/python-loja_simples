@@ -6,8 +6,15 @@
 
 # ---- example index page ----
 def index():
-    response.flash = T("Hello World")
-    return dict(message=T('Welcome to web2py!'))
+    produtos = db(Produtos).select()
+    return locals()
+
+def produto():
+    produto=db(db.produtos.id==request.args[0]).select().first()
+    return locals()
+
+
+
 
 # ---- API (example) -----
 @auth.requires_login()

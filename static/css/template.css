@@ -1,3 +1,4 @@
+* { box-sizing: border-box; }
 body {
    margin: 0;
    font-family: arial;
@@ -41,6 +42,28 @@ main {
 .container {
     width: 100%;
     max-width: 1200px;
-    background-color: #ddd;
+    min-height: 300px;
+   // background-color: #ddd;
     margin: auto;
+    padding: 0 20px;
+    margin-bottom: 20px;
+}
+
+
+.produto {
+    width: 280px;
+    height: auto;
+    background-color: #EEE;
+    float: left;
+    margin: 10px;
+    text-align: center;
+    padding: 10px;
+}
+
+.produto_info {
+    display: flex;
+}
+
+.produto_info .descricao {
+    padding-left: 10px;
 }
