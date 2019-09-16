@@ -1,6 +1,6 @@
 {{extend 'layout.html'}}
 
-<h1>Lista de {{=categoria[0].nome}}</h1>
+<h1>Lista de {{=produtos[0].categoria_id.nome}}</h1>
 
 {{for produto in produtos:}}
     <a href="{{=URL(f='produto',args=[produto.id])}}">

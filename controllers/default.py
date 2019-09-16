@@ -4,22 +4,32 @@
 # this file is released under public domain and you can use without limitations
 # -------------------------------------------------------------------------
 
-# ---- example index page ----
+# ---- index page ----
 def index():
     categorias = db(Categorias).select()
     produtos = db(Produtos).select()
     return locals()
 
+# ---- produto page ----
 def produto():
     categorias = db(Categorias).select()
     produto = db(db.produtos.id==request.args[0]).select().first()
     return locals()
 
+# ---- categoria page ----
 def categoria():
     produtos = db(Produtos.categoria_id == request.args[0]).select()
-    categoria = db(Categorias.id == request.args[0]).select()
+
+    # categoria = db(Categorias.id == request.args[0]).select()
     return locals()
 
+def empresa():
+
+    return locals()
+
+def contato():
+
+    return locals()
 
 # ---- API (example) -----
 @auth.requires_login()
