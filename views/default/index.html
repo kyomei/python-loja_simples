@@ -1,12 +1,16 @@
 {{extend 'layout.html'}}
 
+<div class="d-center">
+    <div class="row">
+        {{for produto in produtos:}}
+            <a href="{{=URL(f='produto',args=[produto.id])}}">
+                <div class="produto">
+                    <img src="https://www.workman.com/assets/images/product-default.png" height="200" /><br />
+                    <strong>{{=produto.nome}}</strong><br />
+                    R$ {{=produto.preco}} <br />
+                </div>
+            </a>
+        {{pass}}
 
-{{for produto in produtos:}}
-    <a href="{{=URL(f='produto',args=[produto.id])}}">
-        <div class="produto">
-            <img src="https://www.workman.com/assets/images/product-default.png" height="200" /><br />
-            <strong>{{=produto.nome}}</strong><br />
-            R$ {{=produto.preco}} <br />
-        </div>
-    </a>
-{{pass}}
+    </div>
+</div>

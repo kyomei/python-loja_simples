@@ -54,15 +54,18 @@ main {
 
 }
 
-
 .produto {
     width: 270px;
     height: auto;
     background-color: #EEE;
+    border: 1px solid #ccc;
     float: left;
     margin: 10px;
     text-align: center;
     padding: 10px;
+}
+.produto:hover {
+    border: 1px solid #777;
 }
 
 .produto_info {
