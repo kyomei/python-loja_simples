@@ -6,14 +6,19 @@
 
 # ---- example index page ----
 def index():
+    categorias = db(Categorias).select()
     produtos = db(Produtos).select()
     return locals()
 
 def produto():
-    produto=db(db.produtos.id==request.args[0]).select().first()
+    categorias = db(Categorias).select()
+    produto = db(db.produtos.id==request.args[0]).select().first()
     return locals()
 
-
+def categoria():
+    produtos = db(Produtos.categoria_id == request.args[0]).select()
+    categoria = db(Categorias.id == request.args[0]).select()
+    return locals()
 
 
 # ---- API (example) -----
