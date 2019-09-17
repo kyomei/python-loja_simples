@@ -32,6 +32,11 @@ def contato():
     categorias = db(Categorias).select() # Lista todas categorias
     return locals()
 
+def carrinho():
+    categorias = db(Categorias).select()  # Lista todas categorias
+    return locals()
+
+
 # ---- API (example) -----
 @auth.requires_login()
 def api_get_user_email():

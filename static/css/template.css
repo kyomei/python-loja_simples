@@ -115,3 +115,16 @@ main {
     text-justify: inter-word;
 }
 
+
+
+/* PAGE CARRINHO */
+#carrinho table {
+    font-size: 18px;
+}
+#carrinho thead {
+    background: #EEE;
+
+}
+#carrinho thead td {
+    padding: 10px;
+}
