@@ -42,12 +42,12 @@
                     <a href="{{=URL('default', 'index')}}"><li>Home</li></a>
                     <a href="{{=URL('default', 'empresa')}}"><li>Empresa</li></a>
                     <a href="{{=URL('default', 'contato')}}"><li>Contato</li></a>
-                    <a href="{{=URL('default', 'categoria/3')}}"><li>Bolsas</li></a>
-                    <a href="{{=URL('default', 'categoria/4')}}"><li>Sapatos</li></a>
-                    <a href="{{=URL('default', 'categoria/5')}}"><li>Camisas</li></a>
-                    <a href="{{=URL('default', 'categoria/6')}}"><li>Calças</li></a>
-                    <a href="{{=URL('default', 'categoria/7')}}"><li>Bonés</li></a>
 
+                    {{ if categorias: }}
+                        {{ for categoria in categorias:}}
+                            <a href="{{=URL('default', 'categoria/{id}'.format(id=categoria.id))}}"><li>{{=categoria.nome}}</li></a>
+                        {{pass}}
+                    {{pass}}
                 </ul>
             </div>
       </nav>
