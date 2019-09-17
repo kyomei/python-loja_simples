@@ -7,7 +7,7 @@
 # ---- index page ----
 def index():
     categorias = db(Categorias).select()
-    produtos = db(Produtos).select()
+    produtos = db(Produtos).select(orderby='<random>', limitby=(0, 8))
     return locals()
 
 # ---- produto page ----
