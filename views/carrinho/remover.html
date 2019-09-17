@@ -1,0 +1,14 @@
+{{ extend 'layout.html' }}
+
+{{=session.carrinho}}
+
+{{ for item in session.carrinho: }}
+    {{ if int(item.id) == int(id): }}
+        {{ session.carrinho.remove(item)}}
+    {{ else: }}
+        <p>Oops, nada encontrado =/</p>
+    {{ pass }}
+{{pass}}
+
+
+{{=session.carrinho}}
