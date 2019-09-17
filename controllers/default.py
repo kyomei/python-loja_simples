@@ -32,9 +32,6 @@ def contato():
     categorias = db(Categorias).select() # Lista todas categorias
     return locals()
 
-def carrinho():
-    categorias = db(Categorias).select()  # Lista todas categorias
-    return locals()
 
 
 # ---- API (example) -----

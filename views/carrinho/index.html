@@ -1,29 +1,34 @@
 {{ extend 'layout.html' }}
 
 <section id="carrinho">
+    <h1>Carrinho: <small>{{=len(session.carrinho)}} Itens</small></h1>
     <table border="0" width="100%" style="text-align: center">
         <thead>
             <tr>
                 <th>Código</th>
                 <th>Imagem</th>
-                <th>Produto nome</th>
+                <th>Nome</th>
                 <th width="200">Quantidade</th>
                 <th>Preço</th>
             </tr>
         </thead>
         <tbody>
+            {{total_preco = 0}}
+            {{ for item in session.carrinho: }}
             <tr>
-                <td>X</td>
-                <td>Imagem</td>
-                <td>Produto 1</td>
+                <td>{{=item.id}}</td>
+                <td><img src="{{=URL('default', 'download', args=item.imagem)}}" height="80"/></td>
+                <td>{{=item.nome}}</td>
                 <td>1</td>
-                <td width="150">R$ 450.00</td>
+                <td width="150">{{=format_decimal(float(item.preco))}}</td>
             </tr>
+                {{total_preco += float(item.preco) }}
+            {{pass}}
         </tbody>
         <tfoot>
             <tr style="color: red;">
                 <td colspan="4" align="right"><strong>Total</strong></td>
-                <td><strong>R$ 200,00</strong></td>
+                <td><strong>{{=format_decimal(total_preco)}}</strong></td>
             </tr>
         </tfoot>
 

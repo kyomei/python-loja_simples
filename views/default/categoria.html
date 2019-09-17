@@ -11,7 +11,7 @@
             <img src="{{=URL('default', 'download', args=produto.imagem)}}" height="200" /><br />
             {{ pass }}
             <strong>{{=produto.nome}}</strong><br />
-            R$ {{=produto.preco}} <br />
+            {{=format_decimal(float(produto.preco))}} <br />
         </div>
     </a>
 {{pass}}

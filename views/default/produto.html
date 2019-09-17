@@ -1,7 +1,7 @@
 {{extend "layout.html"}}
 
 <h1>{{=produto.nome}}</h1>
-Preço: R$ {{=produto.preco}} <br /><br />
+Preço: {{=format_decimal(float(produto.preco))}} - <a href="{{=URL('carrinho', 'adicionar/{id}'.format(id=produto.id))}}">Adicionar ao carrinho</a><br /><br />
 <div class="produto_info">
     {{ if produto.imagem == None: }}
     <img src="https://www.workman.com/assets/images/product-default.png" />

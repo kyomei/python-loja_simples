@@ -128,3 +128,6 @@ main {
 #carrinho thead td {
     padding: 10px;
 }
+.carrinho_item {
+    color: red;
+}
