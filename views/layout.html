@@ -40,9 +40,9 @@
       <nav id="menu"><?= request.function == 'index' ? 'active':'' ?>
             <div class="container">
                 <ul>
-                    <a href="{{=URL('default', 'index')}}"><li class="{{= 'active' if request.function == 'index' else '' }}">Home</li></a>
-                    <a href="{{=URL('default', 'empresa')}}"><li class="{{= 'active' if request.function == 'empresa' else ''}}">Empresa</li></a>
-                    <a href="{{=URL('default', 'contato')}}"><li class="{{= 'active' if request.function == 'contato' else ''}}">Contato</li></a>
+                    <a href="{{=URL('default', 'index')}}"><li class="{{= 'active' if request.controller == 'default' and request.function == 'index' else '' }}">Home</li></a>
+                    <a href="{{=URL('default', 'empresa')}}"><li class="{{= 'active' if request.controller == 'default' and request.function == 'empresa' else ''}}">Empresa</li></a>
+                    <a href="{{=URL('default', 'contato')}}"><li class="{{= 'active' if request.controller == 'default' and request.function == 'contato' else ''}}">Contato</li></a>
                     <!-- Start .\ menu item Categorias -->
 
                     {{  # Se for passada um argumento exemplo categoria/2 onde 2 é argumento então args recebe 2, caso contrario args recebe 0
@@ -54,7 +54,7 @@
                         {{pass}}
                     {{pass}}
                     <!-- End .\ Menu item categorias -->
-                    <a href="{{=URL('carrinho', 'index')}}"><li class="{{= 'active' if request.function == 'carrinho' else ''}} {{= 'carrinho_item' if len(session.carrinho) else ''}}">Meu carrinho [{{=len(session.carrinho)}}]</li></a>
+                    <a href="{{=URL('carrinho', 'index')}}"><li class="{{= 'active' if request.controller == 'carrinho' else ''}} {{= 'carrinho_item' if len(session.carrinho) else ''}}">Meu carrinho [{{=len(session.carrinho)}}]</li></a>
                 </ul>
             </div>
       </nav>
