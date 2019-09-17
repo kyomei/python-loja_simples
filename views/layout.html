@@ -35,19 +35,26 @@
 
       <header id="topo">
             <img src="{{=URL('static','images/logo.png')}}" />
+
       </header>
-      <nav id="menu">
+      <nav id="menu"><?= request.function == 'index' ? 'active':'' ?>
             <div class="container">
                 <ul>
-                    <a href="{{=URL('default', 'index')}}"><li>Home</li></a>
-                    <a href="{{=URL('default', 'empresa')}}"><li>Empresa</li></a>
-                    <a href="{{=URL('default', 'contato')}}"><li>Contato</li></a>
+                    <a href="{{=URL('default', 'index')}}"><li class="{{= 'active' if request.function == 'index' else '' }}">Home</li></a>
+                    <a href="{{=URL('default', 'empresa')}}"><li class="{{= 'active' if request.function == 'empresa' else ''}}">Empresa</li></a>
+                    <a href="{{=URL('default', 'contato')}}"><li class="{{= 'active' if request.function == 'contato' else ''}}">Contato</li></a>
+                    <!-- Start .\ menu item Categorias -->
 
-                    {{ if categorias: }}
+                    {{  # Se for passada um argumento exemplo categoria/2 onde 2 é argumento então args recebe 2, caso contrario args recebe 0
+                        args = request.args[0] if len(request.args) else 0
+                    }}
+                    {{ if 'categorias' in locals(): }}
                         {{ for categoria in categorias:}}
-                            <a href="{{=URL('default', 'categoria/{id}'.format(id=categoria.id))}}"><li>{{=categoria.nome}}</li></a>
+                            <a href="{{=URL('default', 'categoria/{id}'.format(id=categoria.id))}}"><li class="{{= 'active' if int(args) == categoria.id else ''}}">{{=categoria.nome}}</li></a>
                         {{pass}}
                     {{pass}}
+                    <!-- End .\ Menu item categorias -->
+                    <a href="{{=URL('default', 'carrinho')}}"><li class="{{= 'active' if request.function == 'carrinho' else ''}}">Meu carrinho [0]</li></a>
                 </ul>
             </div>
       </nav>

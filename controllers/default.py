@@ -12,23 +12,24 @@ def index():
 
 # ---- produto page ----
 def produto():
-    categorias = db(Categorias).select()
+    categorias = db(Categorias).select() # Lista todas categorias
     produto = db(db.produtos.id==request.args[0]).select().first()
     return locals()
 
 # ---- categoria page ----
 def categoria():
-    produtos = db(Produtos.categoria_id == request.args[0]).select()
+    categorias = db(Categorias).select()  # Lista todas categorias
+    produtos = db(Produtos.categoria_id == request.args[0]).select() # Lista todas categorias
 
     # categoria = db(Categorias.id == request.args[0]).select()
     return locals()
 
 def empresa():
-
+    categorias = db(Categorias).select() # Lista todas categorias
     return locals()
 
 def contato():
-
+    categorias = db(Categorias).select() # Lista todas categorias
     return locals()
 
 # ---- API (example) -----

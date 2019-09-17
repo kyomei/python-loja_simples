@@ -34,6 +34,10 @@ body {
     cursor: pointer;
     background-color: #CCC;
 }
+
+#menu .active {
+    background: #c1c1c1;
+}
 main {
     min-height: 300px;
     height: auto;
