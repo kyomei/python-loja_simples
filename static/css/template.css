@@ -49,16 +49,6 @@ main {
     text-align: center;
     line-height: 80px;
 }
-.container {
-    width: 100%;
-    max-width: 1200px;
-    height: 100%;
-   // background-color: #ddd;
-    margin: auto;
-    padding: 0 20px;
-    margin-bottom: 20px;
-
-}
 
 .produto {
     width: 270px;
@@ -118,16 +108,3 @@ main {
 
 
 /* PAGE CARRINHO */
-#carrinho table {
-    font-size: 18px;
-}
-#carrinho thead {
-    background: #EEE;
-
-}
-#carrinho thead td {
-    padding: 10px;
-}
-.carrinho_item {
-    color: red;
-}

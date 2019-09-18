@@ -55,7 +55,7 @@
                         {{pass}}
                     {{pass}}
                     <!-- End .\ Menu item categorias -->
-                    <a href="{{=URL('carrinho', 'index')}}"><li class="{{= 'active' if request.controller == 'carrinho' else ''}} {{= '' if not session.carrinho else 'carrinho_item' }}">Meu carrinho [{{= 0 if not session.carrinho else len(session.carrinho)}}]</li></a>
+                    <a href="{{=URL('carrinho', 'index')}}"><li class="{{= 'active' if request.controller == 'carrinho' else ''}} ">Meu carrinho <span class="badge badge-danger" style="margin-bottom: 5px">{{= 0 if not session.carrinho else len(session.carrinho)}}</span></li></a>
                 </ul>
             </div>
       </nav>
