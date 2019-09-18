@@ -10,7 +10,7 @@ def adicionar():
     produto = db(Produtos.id==request.args[0]).select().first()
 
     # Verifica se carrinho já possui item
-    if len(session.carrinho) == 0:
+    if not session.carrinho:
         session.carrinho = []
 
     # Adiciona item no carrinho

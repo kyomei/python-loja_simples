@@ -41,27 +41,44 @@
           </div>
 
         </header>
-      <nav id="menu"><?= request.function == 'index' ? 'active':'' ?>
+        <nav class="navbar navbar-expand-md bg-dark navbar-dark">
             <div class="container">
-                <ul>
-                    <a href="{{=URL('default', 'index')}}"><li class="{{= 'active' if request.controller == 'default' and request.function == 'index' else '' }}">Home</li></a>
-                    <a href="{{=URL('default', 'empresa')}}"><li class="{{= 'active' if request.controller == 'default' and request.function == 'empresa' else ''}}">Empresa</li></a>
-                    <a href="{{=URL('default', 'contato')}}"><li class="{{= 'active' if request.controller == 'default' and request.function == 'contato' else ''}}">Contato</li></a>
-                    <!-- Start .\ menu item Categorias -->
+                <!-- Brand -->
+                <a class="navbar-brand" href="#">My Store</a>
 
-                    {{  # Se for passada um argumento exemplo categoria/2 onde 2 é argumento então args recebe 2, caso contrario args recebe 0
-                        args = request.args[0] if len(request.args) else 0
-                    }}
-                    {{ if 'categorias' in locals(): }}
-                        {{ for categoria in categorias:}}
-                            <a href="{{=URL('default', 'categoria/{id}'.format(id=categoria.id))}}"><li class="{{= 'active' if int(args) == categoria.id else ''}}">{{=categoria.nome}}</li></a>
-                        {{pass}}
-                    {{pass}}
-                    <!-- End .\ Menu item categorias -->
-                    <a href="{{=URL('carrinho', 'index')}}"><li class="{{= 'active' if request.controller == 'carrinho' else ''}} ">Meu carrinho <span class="badge badge-danger" style="margin-bottom: 5px">{{= 0 if not session.carrinho else len(session.carrinho)}}</span></li></a>
-                </ul>
+                <!-- Toggler/collapsibe Button -->
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Navbar links -->
+                <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link {{= 'active' if request.controller == 'painel' and request.function == 'index' else ''}}" href="{{=URL('painel')}}">Dashboard</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {{= 'active' if request.controller == 'painel' and request.function == 'categorias' else ''}}" href="{{=URL('painel', 'categorias')}}">Categorias</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {{= 'active' if request.controller == 'painel' and request.function == 'produtos' else ''}}" href="{{=URL('painel', 'produtos')}}">Produtos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {{= 'active' if request.controller == 'painel' and request.function == 'vendas' else ''}}" href="{{=URL('painel', 'vendas')}}">Vendas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {{= 'active' if request.controller == 'painel' and request.function == 'pagamentos' else ''}}" href="{{=URL('painel', 'pagamentos')}}">Pagamentos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {{= 'active' if request.controller == 'painel' and request.function == 'clientes' else ''}}" href="{{=URL('painel', 'clientes')}}">Clientes</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {{= 'active' if request.controller == 'painel' and request.function == 'funcionarios' else '' }}" href="{{=URL('painel', 'funcionarios')}}">Funcionários</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-      </nav>
+        </nav>
       <main>
             <div class="container">
                 {{include}}
