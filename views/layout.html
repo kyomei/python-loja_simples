@@ -35,7 +35,10 @@
   <body>
 
       <header id="topo">
-            <img src="{{=URL('static','images/logo.png')}}" />
+          <div class="container">
+              <div class="col-12 text-right"><a href="{{=URL('default','user/register')}}" class="" title="Criar uma conta">Cadastra-se</a><a href="{{=URL('default', 'user/login')}}" class="btn btn-link" title="Fazer login">Entrar</a></div>
+              <div class="col-12"><img src="{{=URL('static','images/logo.png')}}" /></div>
+          </div>
 
       </header>
       <nav id="menu"><?= request.function == 'index' ? 'active':'' ?>
