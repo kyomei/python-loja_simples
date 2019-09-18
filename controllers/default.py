@@ -6,7 +6,6 @@
 
 # ---- index page ----
 def index():
-    session.carrinho = []
     categorias = db(Categorias).select()
     produtos = db(Produtos).select(orderby='<random>', limitby=(0, 8))
     return locals()
