@@ -171,6 +171,7 @@
 'next %s rows': 'próximas %s ´linhas',
 'next 100 rows': 'próximas 100 linhas',
 'No databases in this application': 'Não há bancos de dados nesta aplicação',
+'Not Authorized': 'Not Authorized',
 'Number of entries: **%s**': 'Número de entradas: **%s**',
 'Object or table name': 'Nome do objeto do da tabela',
 'Old password': 'Old password',
