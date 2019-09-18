@@ -12,3 +12,27 @@ def index():
     clientes = db(db.auth_membership.group_id == 1).count()
     funcionarios = db(db.auth_membership.group_id == 2).count()
     return locals()
+
+def categorias():
+
+    return dict()
+
+def produtos():
+
+    return dict()
+
+def vendas():
+
+    return dict()
+
+def pagamentos():
+
+    return dict()
+
+def clientes():
+
+    return dict()
+
+def funcionarios():
+
+    return dict()

@@ -1,16 +1,16 @@
 {{extend "layout.html"}}
 
-<h1>{{=produto.nome}}</h1>
-Preço: {{=format_decimal(float(produto.preco))}} - <a href="{{=URL('carrinho', 'adicionar/{id}'.format(id=produto.id))}}">Adicionar ao carrinho</a><br /><br />
-<div class="produto_info">
-    {{ if produto.imagem == None: }}
-    <img src="https://www.workman.com/assets/images/product-default.png" />
-    {{ else: }}
-    <img src="{{=URL('default', 'download', args=produto.imagem) }}" width="300" />
-    {{ pass }}
-    <div class="descricao">
-        <h2>Descrição:</h2>
-        {{=produto.descricao}}
+    <h1>{{=produto.nome}}</h1>
+    Preço: {{=format_decimal(float(produto.preco))}} - <a href="{{=URL('carrinho', 'adicionar/{id}'.format(id=produto.id))}}">Adicionar ao carrinho</a><br /><br />
+    <div class="produto_info">
+        {{ if produto.imagem == None: }}
+        <img src="https://www.workman.com/assets/images/product-default.png" />
+        {{ else: }}
+        <img src="{{=URL('default', 'download', args=produto.imagem) }}" width="300" />
+        {{ pass }}
+        <div class="descricao">
+            <h2>Descrição:</h2>
+            {{=produto.descricao}}
 
+        </div>
     </div>
-</div>
