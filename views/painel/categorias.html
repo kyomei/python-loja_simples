@@ -14,11 +14,11 @@
             <td>{{= categoria.id }}</td>
             <td>{{= categoria.nome }}</td>
             <td>
-                <a class="button btn btn-default btn-secondary" href="{{=URL('')}}">
+                <a class="button btn btn-default btn-secondary" href="{{=URL('categoria/{}'.format(categoria.id))}}">
                     <span class="icon magnifier icon-zoom-in glyphicon glyphicon-zoom-in"></span>
                     <span class="buttontext button" title="Visualização">Visualização</span>
                 </a>
-                <a class="button btn btn-default btn-secondary" href="/loja/painel/categorias/edit/categorias/3?_signature=ea83da1b54f239333a7cf1c94c1194d0bdb88c99">
+                <a class="button btn btn-default btn-secondary" href="{{=URL('edit/categorias/{}'.format(categoria.id))}}">
                     <span class="icon pen icon-pencil glyphicon glyphicon-pencil"></span>
                     <span class="buttontext button" title="Editar">Editar</span>
                 </a>

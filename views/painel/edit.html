@@ -1,0 +1,15 @@
+{{ extend 'layout_painel.html' }}
+
+
+<a class="button btn btn-default btn-primary" href="{{=URL('{}'.format(request.args[0]))}}">
+    <span class="icon arrowleft icon-arrow-left glyphicon glyphicon-arrow-left"></span>
+    <span class="buttontext button" title="Back">Voltar</span>
+</a>
+<a class="button btn btn-default btn-primary" href="{{=URL('view/{}'.format(request.args[0]))}}">
+    <span class="icon magnifier icon-zoom-in glyphicon glyphicon-zoom-in"></span>
+    <span class="buttontext button" title="Visualização">Visualização</span>
+</a>
+<div class="mt-4">
+    {{=form}}
+
+</div>

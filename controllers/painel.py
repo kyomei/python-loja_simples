@@ -13,12 +13,18 @@ def index():
     funcionarios = db(db.auth_membership.group_id == 2).count()
     return locals()
 
+# Lista as categorias
 @auth.requires_membership('funcionario')
 def categorias():
     categorias = db(Categorias).select()
     # categorias = SQLFORM.grid(Categorias)
     return dict(categorias=categorias)
 
+@auth.requires_membership('funcionario')
+def categoria():
+    id = request.args[0]
+    categoria = db(Categorias.id == id).select().first()
+    return dict(categoria=categoria)
 
 @auth.requires_membership('funcionario')
 def produtos():
@@ -43,3 +49,20 @@ def clientes():
 def funcionarios():
 
     return dict()
+
+
+def view():
+    table = request.args[0]
+
+    return dict(table=table)
+
+def edit():
+    # pega nome da tabela na url exemplo  categorias
+    tablename = request.args[0]
+    # Pega o id na url após nome da tabela categorias/3 e cria o form
+    form = SQLFORM(db[tablename], request.args(1, cast=int))
+    return dict(form=form)
+
+def teste():
+    categorias = SQLFORM.grid(Categorias)
+    return dict(categorias=categorias)
