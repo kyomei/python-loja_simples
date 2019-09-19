@@ -8,6 +8,7 @@ body {
     background-color: #FFF;
     text-align: center;
     padding: 10px;
+    margin-bottom: 0px !important;
 }
 
 #menu {

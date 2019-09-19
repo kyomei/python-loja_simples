@@ -1,1 +1,33 @@
 {{ extend 'layout_painel.html' }}
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Categoria</th>
+            <th>Ação</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{ for categoria in categorias: }}
+        <tr>
+            <td>{{= categoria.id }}</td>
+            <td>{{= categoria.nome }}</td>
+            <td>
+                <a class="button btn btn-default btn-secondary" href="{{=URL('')}}">
+                    <span class="icon magnifier icon-zoom-in glyphicon glyphicon-zoom-in"></span>
+                    <span class="buttontext button" title="Visualização">Visualização</span>
+                </a>
+                <a class="button btn btn-default btn-secondary" href="/loja/painel/categorias/edit/categorias/3?_signature=ea83da1b54f239333a7cf1c94c1194d0bdb88c99">
+                    <span class="icon pen icon-pencil glyphicon glyphicon-pencil"></span>
+                    <span class="buttontext button" title="Editar">Editar</span>
+                </a>
+                <a class="button btn btn-default btn-secondary" data-w2p_confirm="default" data-w2p_disable_with="default" data-w2p_method="POST" data-w2p_remove="tr" href="/loja/painel/categorias/delete/categorias/3?_signature=81c72099a0b8cc8f6479f52f4468eef642b3b4f8" id="ec32b076-e27b-474e-864b-de757e2857a4">
+                    <span class="icon trash icon-trash glyphicon glyphicon-trash"></span>
+                    <span class="buttontext button" title="Delete">Delete</span>
+                </a>
+            </td>
+        </tr>
+        {{ pass }}
+    </tbody>
+</table>

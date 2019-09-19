@@ -13,25 +13,32 @@ def index():
     funcionarios = db(db.auth_membership.group_id == 2).count()
     return locals()
 
+@auth.requires_membership('funcionario')
 def categorias():
+    categorias = db(Categorias).select()
+    # categorias = SQLFORM.grid(Categorias)
+    return dict(categorias=categorias)
 
-    return dict()
 
+@auth.requires_membership('funcionario')
 def produtos():
 
     return dict()
-
+@auth.requires_membership('funcionario')
 def vendas():
 
     return dict()
 
+@auth.requires_membership('funcionario')
 def pagamentos():
 
     return dict()
 
+@auth.requires_membership('funcionario')
 def clientes():
 
     return dict()
+
 
 def funcionarios():
 
