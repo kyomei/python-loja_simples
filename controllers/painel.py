@@ -52,9 +52,12 @@ def funcionarios():
 
 
 def view():
-    table = request.args[0]
+    tablename = 'categorias'
+    registro = db([tablename].id==request.args[1]).select().first()
 
-    return dict(table=table)
+   # table = request.args[0]
+
+    return dict(registro=registro)
 
 def edit():
     # pega nome da tabela na url exemplo  categorias
