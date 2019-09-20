@@ -29,8 +29,18 @@ def empresa():
     return locals()
 
 def contato():
-    categorias = db(Categorias).select() # Lista todas categorias
-    return locals()
+
+
+    if request.args(0) == 'enviado':
+        from gluon.tools import Mail
+        mail = Mail()
+
+        mail.settings.server = 'log'
+        mail.settings.sender = 'rafael.pena@visie.com'
+        mail.settings.login = 'rafael:10152025'
+    else:
+        categorias = db(Categorias).select() # Lista todas categorias
+        return locals()
 
 
 
